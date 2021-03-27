@@ -3,3 +3,10 @@
 <div class="play-container">
 <p>You don press am <span (click)="countClick()">🙃</span>{{ clickCounter }} times</p>
 </div>
+
+<div class="container">
+    <p>
+        <input type="text" [(NgModel)]="name"><br>
+        <strong>you said: </strong> {{name}}
+    </p>
+</div>
