@@ -11,9 +11,9 @@
     </p>
 </div>
 
-<div class="play-container" [ngStyle]="{ 'background-color': clickCounter > 4 ? 'yellow' : 'lightgray', 'border':           clickCounter > 4 ? '4px solid black' : 'none'} ">
+<div class="play-container" [ngClass]='setClasses()'>
     <ng-template [ngIf]='clickCounter > 4' [ngIfElse]='none'>
-        <p>e don dey many smalll small oo</p>
+        <p>e don dey many small small oo</p>
     </ng-template>
 
     <ng-template #none>

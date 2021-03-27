@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpService} from '../http.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   clickCounter: number = 0;
   name: string = '';
-  constructor() { }
+  constructor(private _http: HttpService) { }
 
   ngOnInit(): void {
+    this._http.myMethod();
   }
+
   countClick(){
     this.clickCounter += 1;
+  }
+
+  setClasses(){
+    let myClasses = {
+      active: this.clickCounter > 4,
+      notactive: this.clickCounter <= 4
+    };
+    return myClasses;
   }
 }
