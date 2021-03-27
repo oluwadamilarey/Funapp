@@ -4,9 +4,19 @@
 <p>You don press am <span (click)="countClick()">🙃</span>{{ clickCounter }} times</p>
 </div>
 
-<div class="container">
+<div class="play-container">
     <p>
-        <input type="text" [(NgModel)]="name"><br>
+        <input type="text" [(ngModel)]="name"><br>
         <strong>you said: </strong> {{name}}
     </p>
+</div>
+
+<div class="play-container" [ngStyle]="{ 'background-color': clickCounter > 4 ? 'yellow' : 'lightgray', 'border':           clickCounter > 4 ? '4px solid black' : 'none'} ">
+    <ng-template [ngIf]='clickCounter > 4' [ngIfElse]='none'>
+        <p>e don dey many smalll small oo</p>
+    </ng-template>
+
+    <ng-template #none>
+        <p>you still fit dey press dey go</p>
+    </ng-template>
 </div>
